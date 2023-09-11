@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Team Agenda
+{% endblock %}
+
+{% block main %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Person to Handle it</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in info %}
+                <tr>
+                    <td>{{ row.task }}</td>
+                    <td>{{ row.description }}</td>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.person }}</td>
+                    <td>
+                        <form action="/team_todo" method="post">
+                            <button id="{{ row.id }}" name="item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        <a class="nav-link" href="/team_todo_add"><button class="btn btn-primary">Add</button></a>
+
+{% endblock %}

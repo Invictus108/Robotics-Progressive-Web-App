@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Game Records
+{% endblock %}
+
+{% block main %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Blue Alliance</th>
+                    <th>Red Alliance</th>
+                    <th>Score Blue-Red</th>
+                    <th>Date</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in info %}
+                <tr>
+                    <td>{{ row.blue }}</td>
+                    <td>{{ row.red }}</td>
+                    <td>{{ row.score }}</td>
+                    <td>{{ row.date }}</td>
+                    <td>
+                        <form action="/records" method="post">
+                            <button id="{{ row.id }}" name="item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        <a class="nav-link" href="/records_add"><button class="btn btn-primary">Add</button></a>
+
+{% endblock %}

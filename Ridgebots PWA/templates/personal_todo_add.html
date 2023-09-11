@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal Agenda Add
+{% endblock %}
+
+{% block main %}
+    <form action="/personal_todo_add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="task" name="task" placeholder="Task" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="description" name="description" placeholder="Description" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="goal" name="goal" placeholder="Goal" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+{% endblock %}

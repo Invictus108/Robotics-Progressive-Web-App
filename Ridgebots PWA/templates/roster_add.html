@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Roster Add
+{% endblock %}
+
+{% block main %}
+    <form action="/roster_add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="First and Last Name" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="grade" min="9" max="12" name="grade" placeholder="Grade" type="number">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="position" name="position" placeholder="Position" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+{% endblock %}

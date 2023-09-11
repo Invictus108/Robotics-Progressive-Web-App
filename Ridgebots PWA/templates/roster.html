@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in info %}
+                <tr>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.grade }}</td>
+                    <td><address><a href="mailto:{{ row.email }}">{{row.name}}</a></address></td>
+                    <td>{{ row.position }}</td>
+                    <td>
+                        <form action="/roster" method="post">
+                            <button id="{{ row.id }}" name="item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        <a class="nav-link" href="/roster_add"><button class="btn btn-primary">Add</button></a>
+
+{% endblock %}

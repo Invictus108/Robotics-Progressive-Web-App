@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Parts
+{% endblock %}
+
+{% block main %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Part</th>
+                    <th>Link</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in info %}
+                <tr>
+                    <td>{{ row.part }}</td>
+                    <td><a href="{{ row.link }}" target="_blank">Link</a></td>
+                    <td>{{ row.amount }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>
+                        <form action="/parts" method="post">
+                            <button id="{{ row.id }}" name="item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        <a class="nav-link" href="/parts_add"><button class="btn btn-primary">Add</button></a>
+
+{% endblock %}

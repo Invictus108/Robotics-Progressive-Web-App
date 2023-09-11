@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calendar
+{% endblock %}
+
+{% block main %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in info %}
+                <tr>
+                    <td>{{ row.event }}</td>
+                    <td>{{ row.address}}</td>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.time }}</td>
+                    <td>
+                        <form action="/calendar" method="post">
+                            <button id="{{ row.id }}" name="item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        <a class="nav-link" href="/calendar_add"><button class="btn btn-primary">Add</button></a>
+
+{% endblock %}

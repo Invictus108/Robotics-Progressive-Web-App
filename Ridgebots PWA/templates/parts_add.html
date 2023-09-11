@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Parts Request
+{% endblock %}
+
+{% block main %}
+    <form action="/parts_add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="part" name="part" placeholder="Part" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="link" name="link" placeholder="URL" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="amount" name="amount" placeholder="Amount" type="number">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="price" name="price" placeholder="Price" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+{% endblock %}

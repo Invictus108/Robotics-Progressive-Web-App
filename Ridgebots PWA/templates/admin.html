@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+<table>
+    <thead>
+        <tr>
+            <th>Page</th>
+            <th>Data_One</th>
+            <th>Data_Two</th>
+            <th>Data_Three</th>
+            <th>Data_Four</th>
+            <th>Add</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in info %}
+        <tr>
+            <td>{{ row.page }}</td>
+            <td>{{ row.data_one }}</td>
+            <td>{{ row.data_two }}</td>
+            <td>{{ row.data_three }}</td>
+            <td>{{ row.data_four }}</td>
+            <td>
+                <form action="/admin" method="post">
+                    <button id="{{ row.id }}" name="add_item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Add</button>
+                </form>
+            </td>
+            <td>
+                <form action="/admin" method="post">
+                    <button id="{{ row.id }}" name="remove_item_id" value="{{ row.id }}" class="btn btn-primary" type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    
+    </tbody>
+</table>
+
+
+{% endblock %}

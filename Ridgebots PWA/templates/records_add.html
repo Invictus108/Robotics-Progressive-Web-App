@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Records Add
+{% endblock %}
+
+{% block main %}
+    <form action="/records_add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="blue" name="blue" placeholder="Blue Alliance: Team 1-Team 2" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="red" name="red" placeholder="Red Alliance: Team 1-Team 2" type="text">
+            <br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="score" name="score" placeholder="Score: Blue-Red" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+{% endblock %}
