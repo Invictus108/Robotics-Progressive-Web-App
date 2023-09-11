@@ -9,7 +9,7 @@ from datetime import datetime
 
 from helpers import apology, login_required
 
-#dict maker
+#dict maker for sqlite3
 def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
