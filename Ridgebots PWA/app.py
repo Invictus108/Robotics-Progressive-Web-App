@@ -17,8 +17,10 @@ def dict_factory(cursor, row):
     return d
 
 
+
 # Configure application
 app = Flask(__name__)
+
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
