@@ -1,5 +1,4 @@
 import os
-
 import sqlite3
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -8,6 +7,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 
 from helpers import apology, login_required
+
+#Use folowing command in command line to run app: flask --app app run 
 
 #dict maker for sqlite3
 def dict_factory(cursor, row):
