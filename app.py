@@ -17,7 +17,7 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
-
+print(generate_password_hash("admin"))
 
 # Configure application
 app = Flask(__name__)
@@ -29,7 +29,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure SQLite database
-db1 = sqlite3.connect("finance.db", check_same_thread=False)
+db1 = sqlite3.connect("database.db", check_same_thread=False)
 db1.row_factory = dict_factory
 db = db1.cursor()
 
