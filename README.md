@@ -9,7 +9,7 @@ It features mutliple pages including: Indivdual logins, admin control, a score k
  
 All additions to forms beside the personal todo must go through admin approval
 
-Personalizing the app is simple and only requires a few steps:
+Personalizing the app is simple and only requires a few steps
 Change the name Ridgebots in the layout.html file located in the templates folder to your team name
 Add a fun photo or team logo to the index page
 Login to the defult admin account with admin as both password and username and change the password
