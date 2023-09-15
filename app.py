@@ -210,7 +210,7 @@ def register():
         # log user in
         db.execute("SELECT * FROM users WHERE username = ?", [username])
         rows = db.fetchone()
-        session["user_id"] = rows
+        session["user_id"] = rows["id"]
 
         return redirect("/")
 
